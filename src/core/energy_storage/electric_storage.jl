@@ -165,6 +165,8 @@ end
     model_degradation::Bool = false
     degradation::Dict = Dict()
     minimum_avg_soc_fraction::Float64 = 0.0
+    max_duration_hours::Real = 200
+    min_duration_hours::Real = 0.0
 ```
 """
 Base.@kwdef struct ElectricStorageDefaults
@@ -198,6 +200,8 @@ Base.@kwdef struct ElectricStorageDefaults
     model_degradation::Bool = false
     degradation::Dict = Dict()
     minimum_avg_soc_fraction::Float64 = 0.0
+    max_duration_hours::Real = 200
+    min_duration_hours::Real = 0.0
 end
 
 
@@ -239,6 +243,8 @@ struct ElectricStorage <: AbstractElectricStorage
     model_degradation::Bool
     degradation::Degradation
     minimum_avg_soc_fraction::Float64
+    max_duration_hours::Real
+    min_duration_hours::Real
 
     function ElectricStorage(d::Dict, f::Financial)  
         s = ElectricStorageDefaults(;d...)
@@ -326,7 +332,9 @@ struct ElectricStorage <: AbstractElectricStorage
             net_present_cost_per_kwh,
             s.model_degradation,
             degr,
-            s.minimum_avg_soc_fraction
+            s.minimum_avg_soc_fraction,
+            s.max_duration_hours,
+            s.min_duration_hours
         )
     end
 end
