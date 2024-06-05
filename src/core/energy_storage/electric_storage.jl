@@ -165,7 +165,7 @@ end
     model_degradation::Bool = false
     degradation::Dict = Dict()
     minimum_avg_soc_fraction::Float64 = 0.0
-    max_duration_hours::Real = 200
+    max_duration_hours::Real = 999999999
     min_duration_hours::Real = 0.0
 ```
 """
@@ -200,7 +200,7 @@ Base.@kwdef struct ElectricStorageDefaults
     model_degradation::Bool = false
     degradation::Dict = Dict()
     minimum_avg_soc_fraction::Float64 = 0.0
-    max_duration_hours::Real = 200
+    max_duration_hours::Real = 999999999
     min_duration_hours::Real = 0.0
 end
 
