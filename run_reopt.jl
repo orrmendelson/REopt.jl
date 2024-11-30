@@ -2,14 +2,15 @@
 # Readme:
 ######################################################
 # 1. to execute:
-# 1.1 open terminal and type julia ()+ enter)
+# 1.1 open terminal and type julia + enter
 # 1.2 change folder:
-#        cd("C:/dev/enerwiz/reopt_julia/REopt.jl/")
+#        cd("C:/dev/enerwiz/REopt.jl/")
 # 1.3 On first time of running julia in this folder - use:
 #        ] activate .
 #        instantiate
-# 2. On first time of running julia in this folder - Uncomment the "import" lines below
-# 3. Execute by:
+# 2. Use "exit" to return from REopt prompt to Julia prompt
+# 3. On first time of running julia in this folder - Uncomment the line below the "import lines* below
+# 4. Execute by:
 #        include("run_reopt.jl")
 ######################################################
 
@@ -24,10 +25,10 @@ using JSON
 
 scenario_path = "./test/scenarios/"
 # uncomment one of lines to run the scenario:
+scenario = "pv"
 # scenario = "pv_storage"
-scenario = "pv_storage_no_tariff_01"
+# scenario = "pv_storage_no_tariff_01"
 # scenario = "no_techs"
-# scenario = "pv"
 # scenario = "emissions"
 # scenario = "flatloads"
 # scenario = "incentives"
